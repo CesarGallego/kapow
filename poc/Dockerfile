@@ -1,8 +1,6 @@
-FROM python:3.7-alpine
+FROM python:3.7-slim-stretch
 
-RUN apk upgrade --update-cache       \
- && apk add bash curl coreutils file \
- && pip install pipenv
+RUN pip install pipenv
 
 COPY Pipfile Pipfile.lock /
 
